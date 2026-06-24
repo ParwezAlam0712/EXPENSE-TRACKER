@@ -70,6 +70,8 @@ function addTransaction(e) {
 
     transactions.push(transaction);
 
+    updateLocalStorage();
+
     renderTransactions();
 
     console.log(transactions);
@@ -124,6 +126,13 @@ function renderTransactions() {
 
 }
 
+function updateLocalStorage() {
+    localStorage.setItem(
+        "transactions",
+        JSON.stringify(transactions)
+    );
+}
+
 function deleteTransaction(id) {
 
     transactions =
@@ -131,6 +140,8 @@ function deleteTransaction(id) {
             transaction =>
                 transaction.id !== id
         );
+
+    updateLocalStorage();
 
     renderTransactions();
 }
