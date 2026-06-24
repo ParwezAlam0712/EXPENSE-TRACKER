@@ -172,3 +172,31 @@ function updateSummary() {
     expenseEl.textContent =
         `₹${Math.abs(expense).toFixed(2)}`;
 }
+
+
+searchInput.addEventListener("input", () => {
+
+    const searchValue =
+        searchInput.value.toLowerCase();
+
+    const items =
+        document.querySelectorAll("#transactions li");
+
+    items.forEach((item) => {
+
+        const text =
+            item.textContent.toLowerCase();
+
+        if (text.includes(searchValue)) {
+
+            item.style.display = "flex";
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+});
