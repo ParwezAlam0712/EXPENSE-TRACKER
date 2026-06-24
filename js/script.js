@@ -1,3 +1,5 @@
+
+
 const themeToggle =
     document.getElementById("themeToggle");
 // Form Elements
@@ -175,6 +177,7 @@ function deleteTransaction(id) {
 
 function updateSummary() {
 
+   
     const amounts = transactions.map(
         transaction => transaction.amount
     );
@@ -198,6 +201,7 @@ function updateSummary() {
 
     expenseEl.textContent =
         `₹${Math.abs(expense).toFixed(2)}`;
+
 }
 
 
