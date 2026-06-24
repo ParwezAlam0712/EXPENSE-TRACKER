@@ -101,6 +101,8 @@ form.addEventListener("submit", addTransaction);
 
 function renderTransactions() {
 
+    
+
     transactionsList.innerHTML = "";
 
     if (transactions.length === 0) {
