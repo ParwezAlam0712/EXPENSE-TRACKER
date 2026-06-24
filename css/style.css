@@ -216,3 +216,22 @@ form button:hover {
     background: white;
     border-radius: 10px;
 }
+
+.light-mode {
+    background: #f8fafc;
+}
+
+.light-mode .container {
+    background: white;
+}
+
+.light-mode header h1,
+.light-mode .form-card h3,
+.light-mode .transaction-card h3 {
+    color: #111827;
+}
+
+.light-mode .form-card,
+.light-mode .transaction-card {
+    background: #f1f5f9;
+}

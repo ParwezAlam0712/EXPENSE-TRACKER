@@ -1,3 +1,5 @@
+const themeToggle =
+    document.getElementById("themeToggle");
 // Form Elements
 
 const form = document.getElementById("form");
@@ -30,6 +32,16 @@ console.log(transactions);
 
 function init() {
 
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+
+        document.body.classList.add(
+            "light-mode"
+        );
+
+    }
     renderTransactions();
 
     console.log(
@@ -213,5 +225,21 @@ searchInput.addEventListener("input", () => {
         }
 
     });
+
+});
+
+themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+
+        localStorage.setItem("theme", "light");
+
+    } else {
+
+        localStorage.setItem("theme", "dark");
+
+    }
 
 });
