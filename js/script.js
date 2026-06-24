@@ -89,6 +89,21 @@ function renderTransactions() {
 
     transactionsList.innerHTML = "";
 
+    if (transactions.length === 0) {
+
+        transactionsList.innerHTML = `
+        <li class="empty-state">
+            📊 No Transactions Yet
+            <br>
+            Start tracking your income and expenses
+        </li>
+    `;
+
+        updateSummary();
+
+        return;
+    }
+
     transactions.forEach((transaction) => {
 
         const li = document.createElement("li");
